@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Speech to Text</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1> Design and development of system for unveiling inaunthenticity in audio content</h1>
+    </header>
+
+    <main>
+      <div style="text-align: center">
+        <button onclick="startRecording()">Start Recording</button>
+        <!-- <button onclick="startRecording()" onclick="stopRecording()"> 2 in 1 button</button> -->
+        <button onclick="stopRecording()" disabled>Stop Recording</button>
+
+      </div>
+
+      <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="audioFile" name="file" accept="audio/*" />
+        <button type="button" onclick="uploadAudio()">Upload Audio</button>
+      </form>
+
+      <h2>Output</h2>
+      <p id="output"></p>
+      <table id="keywordsTable">
+        <thead>
+          <tr>
+            <th>Correct Keywords</th>
+            <th>Matched Keywords</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="correctKeywords"></td>
+            <td id="matchedKeywords"></td>
+          </tr>
+        </tbody>
+      </table>
+      <p id="accuracy"></p>
+      <p id="userParagraph"></p>
+    </main>
+    <script src="pro.js"></script>
+  </body>
+</html>
